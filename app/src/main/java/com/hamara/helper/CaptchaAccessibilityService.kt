@@ -13,8 +13,8 @@ class CaptchaAccessibilityService : AccessibilityService() {
         private const val TAG = "CaptchaHelper"
         private const val TARGET_PACKAGE = "co.median.android.jrejze"
         
-        // Regex pattern to extract two numbers and operator
-        private val MATH_PATTERN = Pattern.compile("(\d{1,4})\s*([+\-*\/xX×÷])\s*(\d{1,4})")
+        // Regex pattern to extract two numbers and operator: +, -, *, /, x, X, ×, ÷
+        private val MATH_PATTERN = Pattern.compile("(\\d{1,4})\\s*([-+*xX×÷/])\\s*(\\d{1,4})")
     }
 
     private var lastSolvedEquation = ""
@@ -27,11 +27,7 @@ class CaptchaAccessibilityService : AccessibilityService() {
         if (packageName != TARGET_PACKAGE) return
 
         val rootNode = rootInActiveWindow ?: return
-        try {
-            processScreen(rootNode)
-        } finally {
-            rootNode.recycle()
-        }
+        processScreen(rootNode)
     }
 
     private fun processScreen(rootNode: AccessibilityNodeInfo) {
@@ -53,7 +49,6 @@ class CaptchaAccessibilityService : AccessibilityService() {
                 )
             }
             val success = inputNode.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, arguments)
-            inputNode.recycle()
 
             if (success) {
                 lastSolvedEquation = equationStr
@@ -90,10 +85,8 @@ class CaptchaAccessibilityService : AccessibilityService() {
             val child = node.getChild(i)
             val match = findMathEquation(child)
             if (match != null) {
-                child?.recycle()
                 return match
             }
-            child?.recycle()
         }
         return null
     }
@@ -107,35 +100,24 @@ class CaptchaAccessibilityService : AccessibilityService() {
         if (editNodes.isEmpty()) return null
 
         // In the login form:
-        // Input 0: Username
-        // Input 1: Password
-        // Input 2: Captcha Answer
-        if (editNodes.size >= 3) {
-            val captchaNode = editNodes[2]
-            for (i in editNodes.indices) {
-                if (i != 2) editNodes[i].recycle()
-            }
-            return captchaNode
+        // Input 0: Username, Input 1: Password, Input 2: Captcha Answer
+        return if (editNodes.size >= 3) {
+            editNodes[2]
+        } else {
+            editNodes.last()
         }
-
-        val lastNode = editNodes.last()
-        for (i in 0 until editNodes.size - 1) {
-            editNodes[i].recycle()
-        }
-        return lastNode
     }
 
     private fun collectEditableNodes(node: AccessibilityNodeInfo?, list: MutableList<AccessibilityNodeInfo>) {
         if (node == null) return
 
         if (node.isEditable || node.className?.toString()?.contains("EditText", ignoreCase = true) == true) {
-            list.add(AccessibilityNodeInfo.obtain(node))
+            list.add(node)
         }
 
         for (i in 0 until node.childCount) {
             val child = node.getChild(i)
             collectEditableNodes(child, list)
-            child?.recycle()
         }
     }
 
