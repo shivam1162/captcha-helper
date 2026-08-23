@@ -39,16 +39,16 @@ class MainActivity : AppCompatActivity() {
 
         if (isServiceRunning) {
             tvStatus.text = getString(R.string.status_active)
-            tvStatus.setTextColor(ContextCompat.getColor(this, R.color.green_success))
-            btnEnableService.text = "✓ अनुमति चालू है (Active)"
+            tvStatus.setTextColor(ContextCompat.getColor(this, R.color.active_green))
+            btnEnableService.text = getString(R.string.btn_enabled)
             btnEnableService.isEnabled = false
-            btnEnableService.setBackgroundColor(ContextCompat.getColor(this, R.color.green_success))
+            btnEnableService.setBackgroundColor(ContextCompat.getColor(this, R.color.card_stroke))
         } else {
             tvStatus.text = getString(R.string.status_inactive)
-            tvStatus.setTextColor(ContextCompat.getColor(this, R.color.red_error))
+            tvStatus.setTextColor(ContextCompat.getColor(this, R.color.crimson_red))
             btnEnableService.text = getString(R.string.btn_enable)
             btnEnableService.isEnabled = true
-            btnEnableService.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_primary))
+            btnEnableService.setBackgroundColor(ContextCompat.getColor(this, R.color.crimson_red))
         }
     }
 

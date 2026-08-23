@@ -1,9 +1,10 @@
 <resources>
-    <style name="Theme.CaptchaHelper" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimary">@color/purple_primary</item>
-        <item name="colorPrimaryVariant">@color/purple_dark</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="android:statusBarColor">@color/purple_dark</item>
-        <item name="android:windowBackground">@color/background_light</item>
+    <style name="Theme.CaptchaHelper" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/crimson_red</item>
+        <item name="colorPrimaryVariant">@color/dark_red</item>
+        <item name="colorOnPrimary">@color/pure_white</item>
+        <item name="android:statusBarColor">@color/black_bg</item>
+        <item name="android:navigationBarColor">@color/black_bg</item>
+        <item name="android:windowBackground">@color/black_bg</item>
     </style>
 </resources>

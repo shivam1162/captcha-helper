@@ -1,11 +1,10 @@
 <resources>
-    <color name="purple_primary">#4361EE</color>
-    <color name="purple_dark">#3A0CA3</color>
-    <color name="teal_accent">#4CC9F0</color>
-    <color name="white">#FFFFFF</color>
-    <color name="background_light">#F8F9FD</color>
-    <color name="text_dark">#1A1A2E</color>
-    <color name="text_muted">#6C757D</color>
-    <color name="green_success">#2EC4B6</color>
-    <color name="red_error">#E71D36</color>
+    <color name="black_bg">#0A0A0A</color>
+    <color name="card_bg">#181818</color>
+    <color name="card_stroke">#333333</color>
+    <color name="crimson_red">#E50914</color>
+    <color name="dark_red">#8B0000</color>
+    <color name="pure_white">#FFFFFF</color>
+    <color name="text_muted">#AAAAAA</color>
+    <color name="active_green">#00E676</color>
 </resources>
