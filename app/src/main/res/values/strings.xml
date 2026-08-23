@@ -8,6 +8,6 @@
     <string name="btn_enable">अनुमति चालू करें (Enable Service)</string>
     <string name="instructions_title">उपयोग विधि (How it works):</string>
     <string name="instruction_1">1. ऊपर दिए बटन से Accessibility अनुमति चालू करें।</string>
-    <string name="instruction_2">2. इसके बाद बस "हमारे शिक्षक" ऐप खोलें।</string>
+    <string name="instruction_2">2. इसके बाद बस \"हमारे शिक्षक\" ऐप खोलें।</string>
     <string name="instruction_3">3. गणित प्रश्न अपने आप हल होकर भर जाएगा!</string>
 </resources>
