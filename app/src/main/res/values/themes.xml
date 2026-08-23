@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.CaptchaHelper" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/purple_primary</item>
+        <item name="colorPrimaryVariant">@color/purple_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/purple_dark</item>
+        <item name="android:windowBackground">@color/background_light</item>
+    </style>
+</resources>
