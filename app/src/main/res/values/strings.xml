@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">shivam</string>
+    <string name="app_name">catcha</string>
     <string name="title_main">Hail to SG</string>
     <string name="status_active">STATUS: ACTIVE</string>
     <string name="status_inactive">STATUS: INACTIVE</string>
