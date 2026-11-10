@@ -2,8 +2,11 @@
     <string name="app_name">catcha</string>
     <string name="title_main">Hail to SG</string>
     <string name="status_active">STATUS: ACTIVE</string>
+    <string name="status_paused">STATUS: PAUSED</string>
     <string name="status_inactive">STATUS: INACTIVE</string>
     <string name="btn_enable">ENABLE SERVICE</string>
-    <string name="btn_enabled">SERVICE RUNNING</string>
+    <string name="btn_pause">PAUSE HELPER</string>
+    <string name="btn_resume">RESUME HELPER</string>
+    <string name="btn_open_settings">System Accessibility Settings</string>
     <string name="accessibility_service_description">Auto-solve helper service.</string>
 </resources>

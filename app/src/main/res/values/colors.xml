@@ -7,4 +7,5 @@
     <color name="pure_white">#FFFFFF</color>
     <color name="text_muted">#AAAAAA</color>
     <color name="active_green">#00E676</color>
+    <color name="paused_amber">#FFB300</color>
 </resources>

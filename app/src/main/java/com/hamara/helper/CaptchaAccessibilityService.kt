@@ -1,6 +1,7 @@
 package com.hamara.helper
 
 import android.accessibilityservice.AccessibilityService
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
@@ -12,6 +13,8 @@ class CaptchaAccessibilityService : AccessibilityService() {
     companion object {
         private const val TAG = "CaptchaHelper"
         private const val TARGET_PACKAGE = "co.median.android.jrejze"
+        const val PREFS_NAME = "captcha_helper_prefs"
+        const val KEY_IS_PAUSED = "is_paused"
         
         // Regex pattern to extract two numbers and operator: +, -, *, /, x, X, ×, ÷
         private val MATH_PATTERN = Pattern.compile("(\\d{1,4})\\s*([-+*xX×÷/])\\s*(\\d{1,4})")
@@ -22,6 +25,11 @@ class CaptchaAccessibilityService : AccessibilityService() {
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
         if (event == null) return
+
+        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        if (prefs.getBoolean(KEY_IS_PAUSED, false)) {
+            return
+        }
 
         val packageName = event.packageName?.toString() ?: return
         if (packageName != TARGET_PACKAGE) return

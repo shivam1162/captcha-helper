@@ -13,7 +13,7 @@
         android:id="@+id/ivCat"
         android:layout_width="115dp"
         android:layout_height="115dp"
-        android:src="@drawable/cat"
+        android:src="@drawable/cat_logo"
         android:contentDescription="Cat Logo"
         android:layout_marginBottom="24dp" />
 
@@ -31,6 +31,7 @@
 
     <!-- Control Card -->
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardControl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="16dp"
@@ -68,6 +69,17 @@
                 android:letterSpacing="0.05"
                 app:cornerRadius="10dp"
                 app:backgroundTint="@color/crimson_red" />
+
+            <TextView
+                android:id="@+id/tvOpenSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_open_settings"
+                android:textColor="@color/text_muted"
+                android:textSize="13sp"
+                android:padding="8dp"
+                android:layout_marginTop="12dp"
+                android:visibility="gone" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
