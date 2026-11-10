@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         if (!isServiceRunning) {
             tvStatus.text = getString(R.string.status_inactive)
             tvStatus.setTextColor(ContextCompat.getColor(this, R.color.crimson_red))
-            cardControl.strokeColor = ContextCompat.getColor(this, R.color.crimson_red)
+            cardControl.setStrokeColor(ContextCompat.getColor(this, R.color.crimson_red))
 
             btnEnableService.text = getString(R.string.btn_enable)
             btnEnableService.isEnabled = true
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             if (isPaused) {
                 tvStatus.text = getString(R.string.status_paused)
                 tvStatus.setTextColor(ContextCompat.getColor(this, R.color.paused_amber))
-                cardControl.strokeColor = ContextCompat.getColor(this, R.color.paused_amber)
+                cardControl.setStrokeColor(ContextCompat.getColor(this, R.color.paused_amber))
 
                 btnEnableService.text = getString(R.string.btn_resume)
                 btnEnableService.isEnabled = true
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 tvStatus.text = getString(R.string.status_active)
                 tvStatus.setTextColor(ContextCompat.getColor(this, R.color.active_green))
-                cardControl.strokeColor = ContextCompat.getColor(this, R.color.active_green)
+                cardControl.setStrokeColor(ContextCompat.getColor(this, R.color.active_green))
 
                 btnEnableService.text = getString(R.string.btn_pause)
                 btnEnableService.isEnabled = true
